@@ -1,36 +1,37 @@
-# 🧠 Programación Funcional en Python
 
-La **programación funcional** se basa en escribir código usando **funciones puras**, **inmutabilidad** y **expresiones**, en lugar de estructuras imperativas.
+# 🧠 Functional Programming in Python
 
----
-
-## ⚙️ Conceptos Clave
-
-| Concepto | Descripción | Ejemplo |
-|-----------|--------------|----------|
-| **Función pura** | No tiene efectos secundarios ni depende de variables externas. | ```python def suma(a, b): return a + b``` |
-| **Inmutabilidad** | Los datos no cambian; se crean nuevos valores. | ```python x = [1, 2, 3]; y = x + [4]``` |
-| **Expresiones vs. Sentencias** | Expresiones devuelven valor; sentencias ejecutan acciones. | `x = 2 + 3` (expresión) |
-| **Primera clase** | Las funciones se pueden guardar en variables o pasar como argumentos. | ```python f = print; f("Hola")``` |
-| **Alta orden** | Funciones que reciben o devuelven otras funciones. | ```python map(func, iterable)``` |
+Functional programming focuses on writing code using **pure functions**, **immutability**, and **expressions**, instead of side effects or imperative steps.
 
 ---
 
-## 🧮 Funciones Funcionales Integradas
+## ⚙️ Core Concepts
 
-| Función | Descripción | Ejemplo |
+| Concept | Description | Example |
 |----------|--------------|----------|
-| `map(func, iterable)` | Aplica una función a cada elemento. | ```python list(map(lambda x: x*2, [1,2,3]))``` |
-| `filter(func, iterable)` | Filtra elementos según una condición. | ```python list(filter(lambda x: x>2, [1,2,3,4]))``` |
-| `reduce(func, iterable)` | Reduce una lista a un valor (requiere `from functools import reduce`). | ```python reduce(lambda a,b: a+b, [1,2,3])``` |
-| `zip()` | Une listas por posición. | ```python list(zip(['a','b'], [1,2]))``` |
-| `enumerate()` | Devuelve índice y valor. | ```python list(enumerate(['a','b','c']))``` |
+| **Pure Function** | Returns the same result for the same input, no side effects. | ```python\ndef add(a, b):\n    return a + b``` |
+| **Immutability** | Data isn’t modified; new values are created instead. | ```python\nx = [1, 2, 3]\ny = x + [4]``` |
+| **Expression vs Statement** | Expressions produce a value; statements perform an action. | `x = 2 + 3` (expression) |
+| **First-Class Functions** | Functions can be stored, passed, and returned like data. | ```python\nf = print\nf("Hi")``` |
+| **Higher-Order Functions** | Accept or return other functions. | ```python\nmap(func, iterable)``` |
 
 ---
 
-## 🧰 Funciones Lambda (Anónimas)
+## 🧮 Built-in Functional Tools
 
-Pequeñas funciones sin nombre.  
+| Function | Description | Example |
+|-----------|--------------|----------|
+| `map(func, iterable)` | Apply a function to each element. | ```python\nlist(map(lambda x: x*2, [1,2,3]))``` |
+| `filter(func, iterable)` | Keep only elements that satisfy a condition. | ```python\nlist(filter(lambda x: x>2, [1,2,3,4]))``` |
+| `reduce(func, iterable)` | Combine elements into a single value. | ```python\nfrom functools import reduce\nreduce(lambda a,b: a+b, [1,2,3])``` |
+| `zip()` | Combine multiple iterables. | ```python\nlist(zip(['a','b'], [1,2]))``` |
+| `enumerate()` | Iterate with index and value. | ```python\nlist(enumerate(['a','b','c']))``` |
+
+---
+
+## 🧰 Lambda Functions
+
+Small anonymous functions.  
 ```python
-doble = lambda x: x * 2
-print(doble(5))  # 10
+double = lambda x: x * 2
+print(double(5))  # 10
